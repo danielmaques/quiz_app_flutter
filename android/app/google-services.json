@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "5569070464",
+    "project_id": "anacsimu",
+    "storage_bucket": "anacsimu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:5569070464:android:8f8841640eef0190ec2d65",
+        "android_client_info": {
+          "package_name": "com.example.quiz_anac"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmfwWrwxeZO3Cfx8UWYmhBCUulK9GzP-4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

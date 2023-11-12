@@ -3,20 +3,15 @@ import 'package:iconsax/iconsax.dart';
 import 'package:quiz_anac/src/home/data/model/questions_model.dart';
 import 'package:quiz_anac/src/simulated/ui/components/question_card.dart';
 import 'package:quiz_anac/src/simulated/ui/components/simulated_app_bar.dart';
+import 'package:quiz_anac/src/simulated/ui/components/simulated_completed.dart';
 
 class SimulatedPage extends StatelessWidget {
-  const SimulatedPage({
+  SimulatedPage({
     super.key,
     required this.questions,
   });
 
   final List<Questao> questions;
-
-  void _handleAlternativeSelected(
-      int questionIndex, int? selectedAlternativeIndex) {
-    questions[questionIndex].selectedAlternativeIndex =
-        selectedAlternativeIndex;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +43,26 @@ class SimulatedPage extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
         ),
         child: InkWell(
-          onTap: () {},
+          onTap: () {
+            int correctAnswers = _countCorrectAnswers();
+
+            showDialog(
+              context: context,
+              barrierDismissible: false,
+              builder: (context) {
+                return AlertDialog(
+                  content: SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.8,
+                    height: MediaQuery.of(context).size.height * 0.5,
+                    child: SimulatedCompleted(
+                      correctAnswers: correctAnswers,
+                      answeredQuestions: _answeredQuestions,
+                    ),
+                  ),
+                );
+              },
+            );
+          },
           borderRadius: BorderRadius.circular(8),
           child: Container(
             width: 180,
@@ -76,5 +90,27 @@ class SimulatedPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  final List<AnsweredQuestion> _answeredQuestions = [];
+
+  void _handleAlternativeSelected(
+      int questionIndex, int? selectedAlternativeIndex) {
+    if (selectedAlternativeIndex != null) {
+      var question = questions[questionIndex];
+      bool isCorrect = question.respostaCorreta ==
+          question.alternativas[selectedAlternativeIndex];
+      _answeredQuestions.add(
+        AnsweredQuestion(
+          question: question,
+          selectedAlternativeIndex: selectedAlternativeIndex,
+          isCorrect: isCorrect,
+        ),
+      );
+    }
+  }
+
+  int _countCorrectAnswers() {
+    return _answeredQuestions.where((q) => q.isCorrect).length;
   }
 }

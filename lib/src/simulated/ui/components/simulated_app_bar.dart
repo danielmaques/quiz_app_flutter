@@ -9,7 +9,7 @@ class SimulatedAppBar extends StatefulWidget implements PreferredSizeWidget {
   State<SimulatedAppBar> createState() => _SimulatedAppBarState();
 
   @override
-  Size get preferredSize => const Size.fromHeight(90);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
 
 class _SimulatedAppBarState extends State<SimulatedAppBar> {
@@ -42,35 +42,33 @@ class _SimulatedAppBarState extends State<SimulatedAppBar> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        RichText(
-          text: const TextSpan(
-            style: TextStyle(fontSize: 22),
-            children: <TextSpan>[
-              TextSpan(
-                text: 'Anac',
-                style: TextStyle(
-                  fontWeight: FontWeight.w600,
+    return AppBar(
+      centerTitle: true,
+      title: Column(
+        children: [
+          RichText(
+            text: const TextSpan(
+              style: TextStyle(fontSize: 22),
+              children: <TextSpan>[
+                TextSpan(
+                  text: 'Anac',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
-              ),
-              TextSpan(
-                text: 'Simulado',
-                style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  color: Colors.blueAccent,
+                TextSpan(
+                  text: 'Simulado',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    color: Colors.blueAccent,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
-        const SizedBox(height: 5),
-        const Text('Tempo restante'),
-        Text(formatDuration(_duration)),
-        const SizedBox(height: 20),
-      ],
+          Text(formatDuration(_duration)),
+        ],
+      ),
     );
   }
 

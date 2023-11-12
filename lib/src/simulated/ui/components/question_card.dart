@@ -56,10 +56,12 @@ class _QuestionCardState extends State<QuestionCard> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Checkbox(
-                      value: widget.questao.selectedAlternativeIndex == index,
+                      value: selectedAlternativeIndex == index,
                       onChanged: (value) {
                         setState(() {
-                          widget.onAlternativeSelected(value! ? index : null);
+                          selectedAlternativeIndex = value! ? index : null;
+                          widget
+                              .onAlternativeSelected(selectedAlternativeIndex);
                         });
                       },
                     ),

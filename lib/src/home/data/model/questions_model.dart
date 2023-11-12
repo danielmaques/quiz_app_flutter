@@ -42,12 +42,14 @@ class Questao {
   List<String> alternativas;
   String respostaCorreta;
   int? selectedAlternativeIndex;
+  bool? isCorrect;
 
   Questao({
     required this.enunciado,
     required this.alternativas,
     required this.respostaCorreta,
     this.selectedAlternativeIndex,
+    this.isCorrect,
   });
 
   factory Questao.fromJson(Map<String, dynamic> json) {
@@ -57,4 +59,23 @@ class Questao {
       respostaCorreta: json['respostaCorreta'],
     );
   }
+}
+
+class AnsweredQuestion {
+  final Questao question;
+  final int?
+      selectedAlternativeIndex; // Pode ser nulo se o usuário não respondeu
+  final bool isCorrect;
+
+  AnsweredQuestion({
+    required this.question,
+    this.selectedAlternativeIndex, // Removido 'required' para permitir nulo
+    required this.isCorrect,
+  });
+
+  String get givenAnswer => selectedAlternativeIndex != null
+      ? question.alternativas[selectedAlternativeIndex!]
+      : 'Sem resposta';
+
+  String get correctAnswer => question.respostaCorreta;
 }

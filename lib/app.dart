@@ -3,6 +3,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:quiz_anac/core/utils/theme/theme.dart';
 import 'package:quiz_anac/src/home/home_module.dart';
 import 'package:quiz_anac/src/simulated/simulated_module.dart';
+import 'package:quiz_anac/src/simulated_completed/simulated_completed_module.dart';
 
 class AppModule extends Module {
   @override
@@ -12,6 +13,7 @@ class AppModule extends Module {
   void routes(r) {
     r.module("/", module: HomeModule());
     r.module("/simulated", module: SimulatedModule());
+    r.module("/simulatedCompleted", module: SimulatedCompletedModule());
   }
 }
 
