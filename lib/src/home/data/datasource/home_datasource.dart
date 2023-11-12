@@ -12,7 +12,7 @@ abstract class IHomeDatasource {
 }
 
 class HomeDatasource implements IHomeDatasource {
-  final String apiKey = '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';
+  final String apiKey = 'oko';
   final String engineId = 'davinci';
 
   @override
@@ -38,17 +38,9 @@ class HomeDatasource implements IHomeDatasource {
         return ResultSuccess(openAIResponse.choices.first.text);
       } else {
         var jsonText = await rootBundle.loadString('assets/data/data.json');
-        print("JSON Carregado: $jsonText");
-
         var jsonData = jsonDecode(jsonText);
         var questionsModel = QuestionsModel.fromJson(jsonData);
-
-        print("Modelo Carregado: $questionsModel");
-
         var filteredQuestions = questionsModel.getQuestionsByTopic(topic);
-
-        print("Questões Filtradas: $filteredQuestions");
-
         return ResultSuccess(filteredQuestions.toString());
       }
     } catch (e) {
