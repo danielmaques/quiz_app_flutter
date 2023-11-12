@@ -1,0 +1,209 @@
+{
+  "simulado": [
+    {
+      "materia": "Navegação VFR",
+      "questoes": [
+        {
+          "enunciado": "Qual é a altitude mínima para um voo VFR sobre áreas povoadas?",
+          "alternativas": [
+            "500 pés",
+            "1000 pés",
+            "1500 pés",
+            "2000 pés"
+          ],
+          "respostaCorreta": "1000 pés"
+        },
+        {
+          "enunciado": "O que significa a sigla 'VFR' na aviação?",
+          "alternativas": [
+            "Visual Flight Rules",
+            "Variable Flight Regulations",
+            "Vertical Flight Route",
+            "Visual Field Range"
+          ],
+          "respostaCorreta": "Visual Flight Rules"
+        },
+        {
+          "enunciado": "Qual instrumento não é essencial para a navegação VFR?",
+          "alternativas": [
+            "Altímetro",
+            "Horizonte artificial",
+            "Bússola",
+            "GPS"
+          ],
+          "respostaCorreta": "Horizonte artificial"
+        },
+        {
+          "enunciado": "Durante um voo VFR, o que deve ser feito ao entrar em uma área de controle?",
+          "alternativas": [
+            "Nada, continuar o voo normalmente",
+            "Notificar o controle de tráfego aéreo",
+            "Alterar a altitude",
+            "Mudar a frequência do rádio para escuta"
+          ],
+          "respostaCorreta": "Notificar o controle de tráfego aéreo"
+        },
+        {
+          "enunciado": "Qual é a principal diferença entre VFR e IFR?",
+          "alternativas": [
+            "Tipo de aeronave utilizada",
+            "Regras de comunicação",
+            "Condições meteorológicas permitidas",
+            "Tipo de licença do piloto"
+          ],
+          "respostaCorreta": "Condições meteorológicas permitidas"
+        },
+        {
+          "enunciado": "Qual é a importância de conhecer o espaço aéreo controlado durante um voo VFR?",
+          "alternativas": [
+            "Evitar áreas de tráfego intenso",
+            "Cumprir com os requisitos de comunicação",
+            "Planejar rotas mais curtas",
+            "Economizar combustível"
+          ],
+          "respostaCorreta": "Cumprir com os requisitos de comunicação"
+        },
+        {
+          "enunciado": "O que um piloto deve fazer se as condições meteorológicas piorarem abaixo dos mínimos VFR?",
+          "alternativas": [
+            "Continuar o voo conforme planejado",
+            "Mudar para regras de voo por instrumentos (IFR)",
+            "Aumentar a altitude",
+            "Pousar no aeroporto mais próximo"
+          ],
+          "respostaCorreta": "Pousar no aeroporto mais próximo"
+        },
+        {
+          "enunciado": "Qual é a frequência de emergência VHF para aviação?",
+          "alternativas": [
+            "121.5 MHz",
+            "123.45 MHz",
+            "118.0 MHz",
+            "112.5 MHz"
+          ],
+          "respostaCorreta": "121.5 MHz"
+        },
+        {
+          "enunciado": "O que é um 'NOTAM' na aviação?",
+          "alternativas": [
+            "Uma nova tecnologia de navegação",
+            "Um aviso sobre condições meteorológicas",
+            "Um aviso sobre mudanças nas instalações aeronáuticas",
+            "Uma nova regulamentação aérea"
+          ],
+          "respostaCorreta": "Um aviso sobre mudanças nas instalações aeronáuticas"
+        },
+        {
+          "enunciado": "Qual é o propósito das cartas aeronáuticas VFR?",
+          "alternativas": [
+            "Navegação por instrumentos",
+            "Planejamento de rotas visuais",
+            "Controle de tráfego aéreo",
+            "Comunicação por rádio"
+          ],
+          "respostaCorreta": "Planejamento de rotas visuais"
+        },
+        {
+          "enunciado": "O que é um 'Squawk' em um transponder?",
+          "alternativas": [
+            "Um código de identificação da aeronave",
+            "Um sinal de emergência",
+            "Uma frequência de rádio",
+            "Um sistema de navegação"
+          ],
+          "respostaCorreta": "Um código de identificação da aeronave"
+        },
+        {
+          "enunciado": "Qual é a regra básica para a separação vertical em VFR?",
+          "alternativas": [
+            "Voar acima das nuvens",
+            "Manter uma separação de 500 pés",
+            "Voar em altitudes ímpares",
+            "Manter uma separação de 1000 pés"
+          ],
+          "respostaCorreta": "Manter uma separação de 500 pés"
+        },
+        {
+          "enunciado": "O que significa 'Flight Following'?",
+          "alternativas": [
+            "Seguir outra aeronave",
+            "Monitoramento do voo pelo controle de tráfego aéreo",
+            "Navegação automática",
+            "Voar em formação"
+          ],
+          "respostaCorreta": "Monitoramento do voo pelo controle de tráfego aéreo"
+        },
+        {
+          "enunciado": "Qual é a principal função de um farol aeronáutico?",
+          "alternativas": [
+            "Indicar a direção do vento",
+            "Sinalizar a localização de um aeroporto",
+            "Auxiliar na navegação por instrumentos",
+            "Alertar sobre perigos no solo"
+          ],
+          "respostaCorreta": "Sinalizar a localização de um aeroporto"
+        },
+        {
+          "enunciado": "Qual é a altitude mínima para voos VFR sobre áreas desabitadas?",
+          "alternativas": [
+            "500 pés",
+            "1000 pés",
+            "1500 pés",
+            "2000 pés"
+          ],
+          "respostaCorreta": "500 pés"
+        },
+        {
+          "enunciado": "O que é um 'Pattern Altitude' em aviação?",
+          "alternativas": [
+            "A altitude de cruzeiro",
+            "A altitude durante a aproximação final",
+            "A altitude de um circuito de tráfego padrão",
+            "A altitude mínima de segurança"
+          ],
+          "respostaCorreta": "A altitude de um circuito de tráfego padrão"
+        },
+        {
+          "enunciado": "Qual é o significado de 'CTAF' na aviação?",
+          "alternativas": [
+            "Controlled Traffic Advisory Frequency",
+            "Common Traffic Advisory Frequency",
+            "Controlled Tower Air Frequency",
+            "Common Tower Advisory Frequency"
+          ],
+          "respostaCorreta": "Common Traffic Advisory Frequency"
+        },
+        {
+          "enunciado": "O que é um 'windsock'?",
+          "alternativas": [
+            "Um instrumento de navegação",
+            "Um dispositivo para medir a velocidade do vento",
+            "Um indicador visual da direção e força do vento",
+            "Uma ferramenta para comunicação em solo"
+          ],
+          "respostaCorreta": "Um indicador visual da direção e força do vento"
+        },
+        {
+          "enunciado": "Qual é a principal diferença entre um voo VFR e um voo SVFR?",
+          "alternativas": [
+            "O tipo de aeronave utilizada",
+            "As condições meteorológicas permitidas",
+            "A altitude de voo",
+            "As regras de comunicação"
+          ],
+          "respostaCorreta": "As condições meteorológicas permitidas"
+        },
+        {
+          "enunciado": "O que é 'see and avoid' na aviação VFR?",
+          "alternativas": [
+            "Uma técnica de navegação",
+            "Um procedimento de emergência",
+            "Um princípio de separação de tráfego aéreo",
+            "Uma regra de comunicação"
+          ],
+          "respostaCorreta": "Um princípio de separação de tráfego aéreo"
+        }
+      ]
+    }
+  ]
+}
