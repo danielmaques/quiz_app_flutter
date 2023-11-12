@@ -4,11 +4,10 @@ import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'package:quiz_anac/core/errors/base_error.dart';
 import 'package:quiz_anac/core/result_wrapper/result_wrapper.dart';
-import 'package:quiz_anac/src/home/data/model/home_model.dart';
 import 'package:quiz_anac/src/home/data/model/questions_model.dart';
 
 abstract class IHomeDatasource {
-  Future<Result<String>> call(String topic);
+  Future<Result<List<Questao>>> call(String topic);
 }
 
 class HomeDatasource implements IHomeDatasource {
@@ -16,7 +15,7 @@ class HomeDatasource implements IHomeDatasource {
   final String engineId = 'davinci';
 
   @override
-  Future<Result<String>> call(String topic) async {
+  Future<Result<List<Questao>>> call(String topic) async {
     try {
       final response = await http.post(
         Uri.parse('https://api.openai.com/v1/chat/completions'),
@@ -34,14 +33,15 @@ class HomeDatasource implements IHomeDatasource {
       );
       if (response.statusCode == 200) {
         final responseData = json.decode(response.body);
-        final openAIResponse = OpenAIResponse.fromJson(responseData);
-        return ResultSuccess(openAIResponse.choices.first.text);
+        var questionsModel = QuestionsModel.fromJson(responseData);
+        var filteredQuestions = questionsModel.getQuestionsByTopic(topic);
+        return ResultSuccess<List<Questao>>(filteredQuestions);
       } else {
         var jsonText = await rootBundle.loadString('assets/data/data.json');
         var jsonData = jsonDecode(jsonText);
         var questionsModel = QuestionsModel.fromJson(jsonData);
         var filteredQuestions = questionsModel.getQuestionsByTopic(topic);
-        return ResultSuccess(filteredQuestions.toString());
+        return ResultSuccess<List<Questao>>(filteredQuestions);
       }
     } catch (e) {
       return ResultError(BaseError('Erro: $e'));

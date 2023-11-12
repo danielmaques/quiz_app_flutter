@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:quiz_anac/core/states/base_page_state.dart';
+import 'package:quiz_anac/src/home/data/model/questions_model.dart';
 import 'package:quiz_anac/src/home/ui/bloc/home_bloc.dart';
 import 'package:quiz_anac/src/home/ui/components/home_app_bar.dart';
 import 'package:quiz_anac/src/home/ui/components/list_card_simulated.dart';
@@ -18,7 +21,6 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     homeBloc = Modular.get<IHomeBloc>();
-    homeBloc.getResponse('Navegação VFR');
   }
 
   @override
@@ -41,7 +43,27 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           const SizedBox(height: 16),
-          CardSimulated(),
+          BlocBuilder(
+            bloc: homeBloc,
+            builder: (context, state) {
+              if (state is SuccessState<List<Questao>>) {
+                var questions = state.data;
+                return CardSimulated(
+                  onTap: (topic) {
+                    homeBloc.getResponse(topic);
+                  },
+                  questions: questions,
+                );
+              } else {
+                return CardSimulated(
+                  onTap: (topic) {
+                    homeBloc.getResponse(topic);
+                  },
+                  questions: const [],
+                );
+              }
+            },
+          ),
         ],
       ),
     );

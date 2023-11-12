@@ -41,11 +41,14 @@ class Questao {
   String enunciado;
   List<String> alternativas;
   String respostaCorreta;
+  int? selectedAlternativeIndex;
 
-  Questao(
-      {required this.enunciado,
-      required this.alternativas,
-      required this.respostaCorreta});
+  Questao({
+    required this.enunciado,
+    required this.alternativas,
+    required this.respostaCorreta,
+    this.selectedAlternativeIndex,
+  });
 
   factory Questao.fromJson(Map<String, dynamic> json) {
     return Questao(

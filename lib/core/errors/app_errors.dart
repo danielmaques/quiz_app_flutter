@@ -1,6 +1,8 @@
 
 
 
+// ignore_for_file: overridden_fields
+
 import 'package:quiz_anac/core/errors/base_error.dart';
 
 class AppError extends BaseError {

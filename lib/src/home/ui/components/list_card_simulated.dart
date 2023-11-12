@@ -1,11 +1,20 @@
+// ignore_for_file: unnecessary_null_comparison
+
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:quiz_anac/src/home/data/model/questions_model.dart';
 
 class CardSimulated extends StatelessWidget {
   CardSimulated({
     super.key,
+    required this.onTap,
+    required this.questions,
   });
+
+  final void Function(String) onTap;
+  final List<Questao> questions;
 
   final List matter = [
     'Navegação VFR',
@@ -47,7 +56,14 @@ class CardSimulated extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
             ),
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                onTap(matter[index]);
+                if (questions.isNotEmpty) {
+                  Modular.to.pushReplacementNamed('/simulated/', arguments: {
+                    'questions': questions,
+                  });
+                }
+              },
               borderRadius: BorderRadius.circular(12),
               child: SizedBox(
                 height: 191,
